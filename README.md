@@ -1,35 +1,35 @@
 # LCPlayer — Premium tvOS Video Player SDK
 
-LCPlayer, tvOS uygulamaları için tasarlanmış modern, premium ve geliştirici dostu bir video oynatıcı SDK’sıdır.  
-IPTV Player geliştiricileri kendi uygulamalarına kolayca entegre edebilir.
+LCPlayer is a modern, premium, and developer-friendly video player SDK designed specifically for tvOS applications.
+IPTV player developers can easily integrate it into their own apps.
+	•	Powerful playback engine based on AVPlayer
+	•	Premium overlay (top bar, timeline, buffer bar)
+	•	Audio & subtitle track selection panel
+	•	Siri Remote support
+	•	Theme & customization
+	•	Configuration & Delegate support
+	•	Distributed as a Swift Package
 
-- AVPlayer tabanlı güçlü playback engine  
-- Premium overlay (top bar, timeline, buffer bar)  
-- Audio & Subtitle track selection panel  
-- Siri Remote desteği  
-- Tema & özelleştirme  
-- Configuration & Delegate  
-- Swift Package olarak dağıtım  
 
 ---
 
-## Kurulum
+## Installation
 
 ### Swift Package Manager
 
 Xcode → **File → Add Packages…**
 
-Aşağıdaki URL’yi ekleyin:
+Add the following URL:
 
 https://github.com/lcetin66/LCPlayer.git
 
 
-veya `Package.swift` içine:
+Or add it to your `Package.swift` :
 
 ```swift
 .package(url: "https://github.com/lcetin66/LCPlayer.git", from: "1.0.0")
 
-Temel Kullanım
+Basic Usage
 
 import LCPlayer
 
@@ -42,14 +42,14 @@ let player = LCPlayerViewController(
 
 present(player, animated: true)
 
-LCPlayer otomatik olarak:
-• overlay’i gösterir
-• timeline + buffer bar çalışır
-• audio/subtitle track’leri algılar
-• remote kontrolleri aktif eder
+LCPlayer automatically:
+	•	Displays the overlay
+	•	Activates the timeline and buffer bar
+	•	Detects audio and subtitle tracks
+	•	Enables remote controls
 
 Configuration
-Geliştiriciler player davranışını özelleştirebilir:
+Developers can customize player behavior:
 
 let config = LCPlayerConfiguration(
     showsTopBar: true,
@@ -74,15 +74,14 @@ theme.textColor = .white
 
 let config = LCPlayerConfiguration(theme: theme)
 
-Tema ile:
-• overlay renkleri
-• timeline renkleri
-• buffer bar
-• yazı renkleri
-özelleştirilebilir.
+With theming you can customize:
+	•	Overlay colors
+	•	Timeline colors
+	•	Buffer bar
+	•	Text colors
 
 Delegate
-Player event’lerini dinlemek için:
+To listen to player events:
 
 class MyController: UIViewController, LCPlayerDelegate {
 
@@ -93,24 +92,26 @@ class MyController: UIViewController, LCPlayerDelegate {
     func lcplayerDidChangeSubtitleTrack(index: Int?) { }
 }
 
-Kullanım:
+Usage:
 let player = LCPlayerViewController(stream: url)
 player.delegate = self
 
 Audio & Subtitle Track Panel
-Siri Remote down tuşu ile açılır.
-• Audio track listesi
-• Subtitle track listesi
-• “None” seçeneği
-• tvOS Focus Engine uyumlu
-• Anında uygulama
-Geliştiricinin ekstra bir şey yapmasına gerek yok.
+
+Opens with the Siri Remote Down button.
+	•	Audio track list
+	•	Subtitle track list
+	•	“None” option
+	•	tvOS Focus Engine compatible
+	•	Applies changes instantly
+
+No additional implementation is required from the developer.
 ---
-Siri Remote Desteği
-• Select → overlay aç/kapa
-• Play/Pause → oynat/durdur
-• Down → track panel aç
-• Menu → track panel kapat
+Siri Remote Support
+	•	Select → Show/Hide overlay
+	•	Play/Pause → Play or pause
+	•	Down → Open track panel
+	•	Menu → Close track panel
 ---
 Public API
 LCPlayerViewController
