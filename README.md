@@ -174,6 +174,7 @@ LCPlayer
 
 Lisans
 MIT License
-© 2025 LCPlayer Team
+© 2025 LCPlayer Team bx 3CCS.com
+
 
 
